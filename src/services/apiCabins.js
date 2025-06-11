@@ -4,7 +4,7 @@ export async function getCabins() {
   const { data, error } = await supabase.from("cabins").select("*");
   if (error) {
     console.error(error);
-    throw new Error("Error fetchung the cabins");
+    throw new Error("Error fetching the cabins");
   }
 
   return data;
