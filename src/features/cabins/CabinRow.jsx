@@ -9,11 +9,11 @@ import { useCreateCabin } from "./useCreateCabin";
 
 CabinRow.propTypes = {
   cabin: PropTypes.shape({
-    name: PropTypes.string.isRequierd,
-    maxCapacity: PropTypes.number.isRequierd,
-    regularPrice: PropTypes.number.isRequierd,
-    discount: PropTypes.number.isRequierd,
-    image: PropTypes.string.isRequierd,
+    name: PropTypes.string.isRequired,
+    maxCapacity: PropTypes.number.isRequired,
+    regularPrice: PropTypes.number.isRequired,
+    discount: PropTypes.number.isRequired,
+    image: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
     description: PropTypes.string,
   }),
