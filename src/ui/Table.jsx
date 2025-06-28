@@ -13,7 +13,8 @@ Row.propTypes +
     children: PropTypes.node.isRequired,
   };
 Body.propTypes = {
-  children: PropTypes.node.isRequired,
+  data: PropTypes.array.isRequired,
+  render: PropTypes.func.isRequired,
 };
 
 const StyledTable = styled.div`
@@ -93,7 +94,10 @@ function Header({ children }) {
     </StyledHeader>
   );
 }
-function Body({ children }) {}
+function Body({ data, render }) {
+  if (!data.length) return <Empty>No data available</Empty>;
+  return <StyledBody>{data.map(render)}</StyledBody>;
+}
 function Row({ children }) {
   const { columns } = useContext(TableContext);
   return (
