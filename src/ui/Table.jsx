@@ -95,7 +95,9 @@ function Header({ children }) {
   );
 }
 function Body({ data, render }) {
-  if (!data.length) return <Empty>No data available</Empty>;
+  if (data.length === 0) {
+    return <Empty>No data available</Empty>;
+  }
   return <StyledBody>{data.map(render)}</StyledBody>;
 }
 function Row({ children }) {
