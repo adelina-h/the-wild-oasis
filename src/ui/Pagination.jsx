@@ -2,6 +2,7 @@ import { HiChevronLeft, HiChevronRight } from "react-icons/hi2";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import { useSearchParams } from "react-router-dom";
+import { PAGE_SIZE } from "../utils/constants";
 Pagination.propTypes = {
   count: PropTypes.number.isRequired,
 };
@@ -61,25 +62,24 @@ const PaginationButton = styled.button`
     color: var(--color-brand-50);
   }
 `;
-const PAGE_SIZE = 10;
 
 void PaginationButton, void P, void Buttons;
 function Pagination({ count }) {
-  const [searchPrams, setSearchParams] = useSearchParams();
-  const currentPage = searchPrams.get("page")
-    ? Number(searchPrams.get("page"))
+  const [searchParams, setSearchParams] = useSearchParams();
+  const currentPage = searchParams.get("page")
+    ? Number(searchParams.get("page"))
     : 1;
   const pageCount = Math.ceil(count / PAGE_SIZE);
 
   function nextPage() {
     const next = currentPage === pageCount ? currentPage : currentPage + 1;
-    searchPrams.set("page", next);
-    setSearchParams(searchPrams);
+    searchParams.set("page", next);
+    setSearchParams(searchParams);
   }
   function previousPage() {
     const prev = currentPage === 1 ? currentPage : currentPage - 1;
-    searchPrams.set("page", prev);
-    setSearchParams(searchPrams);
+    searchParams.set("page", prev);
+    setSearchParams(searchParams);
   }
   if (pageCount <= 1) return null;
   return (
