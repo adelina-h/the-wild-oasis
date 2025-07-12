@@ -1,4 +1,11 @@
 import styled from "styled-components";
+import PropTypes from "prop-types";
+
+DataItem.propTypes = {
+  icon: PropTypes.node.isRequired,
+  label: PropTypes.string.isRequired,
+  children: PropTypes.node,
+};
 
 const StyledDataItem = styled.div`
   display: flex;
