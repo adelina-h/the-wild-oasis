@@ -73,13 +73,13 @@ function BookingRow({
     cabins: { name: cabinName },
   },
 }) {
-  void created_at, void numGuests;
   const navigate = useNavigate();
   const statusToTagName = {
     unconfirmed: "blue",
     "checked-in": "green",
     "checked-out": "silver",
   };
+  void created_at, void numGuests;
 
   return (
     <Table.Row>
