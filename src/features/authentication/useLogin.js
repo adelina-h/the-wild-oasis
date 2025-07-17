@@ -11,7 +11,7 @@ export function useLogin() {
     onSuccess: (user) => {
       queryClient.setQueryData(["user"], user);
 
-      navigate("/dashboard");
+      navigate("/dashboard", { replace: true });
     },
     onError: (err) => {
       console.log("ERROR", err);
