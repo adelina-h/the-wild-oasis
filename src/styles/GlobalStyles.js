@@ -13,7 +13,8 @@ const GlobalStyles = createGlobalStyle`
   --color-brand-900: #312e81;
 
   /* Grey */
-  --color-grey-0: #fff;
+   &.light-mode {
+    --color-grey-0: #fff;
   --color-grey-50: #f9fafb;
   --color-grey-100: #f3f4f6;
   --color-grey-200: #e5e7eb;
@@ -49,7 +50,7 @@ const GlobalStyles = createGlobalStyle`
   --border-radius-tiny: 3px;
   --border-radius-sm: 5px;
   --border-radius-md: 7px;
-  --border-radius-lg: 9px;
+  --border-radius-lg: 9px;}
 
   /* For dark mode */
   --image-grayscale: 0;
@@ -146,6 +147,7 @@ img {
 
 /* FOR DARK MODE */
 
+&.dark-mode {
 --color-grey-0: #18212f;
 --color-grey-50: #111827;
 --color-grey-100: #1f2937;
@@ -183,6 +185,6 @@ img {
 --shadow-lg: 0 2.4rem 3.2rem rgba(0, 0, 0, 0.4);
 
 --image-grayscale: 10%;
---image-opacity: 90%;
+--image-opacity: 90%;}
 `;
 export default GlobalStyles;
