@@ -1,4 +1,12 @@
 import styled from "styled-components";
+import PropTypes from "prop-types";
+
+Stat.propTypes = {
+  icon: PropTypes.element.isRequired,
+  title: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  color: PropTypes.string.isRequired,
+};
 
 const StyledStat = styled.div`
   /* Box */
